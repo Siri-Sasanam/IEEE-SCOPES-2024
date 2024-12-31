@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/LOGO_Updated.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
+    <title>Accommodation Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #showcase {
+            background: rgb(241, 238, 238);
+            color: #fff;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #showcase img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .details {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .details h2 {
+            color:  #071478;
+            font-weight: 500;
+        }
+        .details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+        .details ul li {
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            #showcase {
+                min-height: 200px;
+            }
+            .details {
+                padding: 10px;
+            }
+            .details ul {
+                padding-left: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            #showcase {
+                min-height: 150px;
+            }
+            .details ul {
+                padding-left: 10px;
+            }
+        }
+
+        header {
+    background: #071478;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+        
+        .mobile-toggler .fa-bars,
+        .mobile-toggler .fa-x {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .mobile-toggler .fa-bars {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu {
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(-100%);
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+                z-index: 1000;
+            }
+
+            .mobile-menu.hidden {
+                transform: translateX(100%);
+            }
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown .dropbtn .caret {
+            margin-left: 8px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+.bold{
+    font-weight: 800;
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <nav class="sticky top-0  bg-white shadow-lg">
+        <div class="mx-auto flex justify-between items-center p-4">
+            <div class="nav-links hidden md:flex justify-center items-center px-20">
+                <ul class="flex space-x-10">
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 left-10 font-bold" href="index.html">Home</a></li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="committee.html">Committee</a></li>
+                  
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                            Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+
+                        </div>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                            Author Guidelines
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="registration.html">Registration</a>
+                        <!-- <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">Registration 1</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">Registration 2</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">Registration 3</a>
+                            </div> -->
+                    </li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="contacts.html">Contact</a></li>
+                    <li>
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold accommodation-link" href="Accomadation.html" 
+                           style="animation: blink 1s infinite; color: inherit; text-decoration: none;">
+                           Accommodation & Transportation
+                          <sup style="color: red; font-size: 0.8em; font-weight: bold; vertical-align: super;">(New)</sup>
+                        </a>
+                      </li>
+                      
+                      <style>
+                      /* Blink animation */
+                      @keyframes blink {
+                        50% {
+                          opacity: 0;
+                        }
+                      }
+                      </style>
+                      
+                </ul>
+            </div>
+            <div class="mobile-toggler md:hidden">
+                <div class="space-y-2" id="menu-toggle">
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 w-full h-full hidden transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="bg-white w-2/4 h-full p-6">
+                <div class="flex justify-end">
+                    <div id="menu-close" class="cursor-pointer">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                </div>
+                <ul class="space-y-6 flex flex-col mt-2">
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="index.html">Home</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="committee.html">Committee</a></li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center" href="#">
+                            Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1 z-50">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="callforsponsors.html">Call for Sponsorship</a>
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                            Author Guidelines
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1 z-50">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="Important Dates.html">Important Dates</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Schedule</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+                        </div>
+                    </li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="registration.html">Registration</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+    <header class="mt-5">
+        <!-- <h1>REGISTRATION</h1> -->
+        <h1 class="text-3xl text-center font-bold">Accommodation & Transportation Details</h1>
+    </header>
+<br><br>
+    <header id="showcase">
+        <img src="assets/CUTM__.jpg"  alt="Accommodation Building">
+    </header>
+
+   
+    <div class="container">
+        <div class="details">
+            <h2 class="text-4xl text-center">Accommodation Details</h2>
+            <br>
+            <ul>
+                <li class="text-2xl">Accommodation facilities will be provided free of cost to registered Authors only at CUTM Parlakhemundi Campus on twin sharing basis.</li>
+                <li class="text-2xl">For accompanying persons, Rs. 2000/- per person will be charged for food and lodging. <strong>(To be paid during the Registration)</strong></li>
+                <li class="text-2xl">Accommodation will be allocated strictly on a first come, first served basis.</li>
+                <li class="text-2xl">Paid Accommodations are also available outside the University campus on demand.</li>
+                <li class="text-2xl">Please click the button below to fill in your details for Accommodation <strong>(Mandatory)</strong></li>
+                <div class="mt-6 text-center text-xl">
+                    <a href="https://forms.gle/3Bz745cfPR3knmdVA" target="_blank" class="inline-block px-4 py-2 bg-blue-700 text-white font-bold rounded blink  hover:bg-blue-800 hover:shadow-lg">
+                        👉 Accommodation Form
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+<hr>
+<div class="container">
+    <div class="details">
+        <h2 class="text-4xl text-center">Transportation Details</h2>
+        <br>
+        <p class="text-xl text-justify">
+            Dear Author(s),<br><br>
+            We are happy to provide transport facilities from the following railway station to the Conference Venue (Centurion University (C.U.T.M.), Paralakhemundi Campus).<br>
+            So interested authors are advised to follow the following schedule and fill up the Transportation form by <strong>December 10th, 2024</strong>.
+        </p>
+        <p class="text-xl mt-4">
+            <strong>For any query related to Transportation, please contact: 
+                Dr. Kalyan Chakravarty 
+                <a href="tel:9439331442" class="text-blue-500 underline hover:text-blue-700">(9439331442)</a>
+            </strong>
+        </p>
+        <br>
+        <h3 class="text-2xl font-bold">Availability of Transport (Free of Cost):</h3>
+        <div class="table-container mt-4">
+            <table class="w-full border-collapse border border-gray-400 text-center text-xl">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th style="width: 10%;" class="border border-gray-400 p-2">Date</th>
+                        <th class="border border-gray-400 px-4 py-2">From Palasa Railway Station to C.U.T.M. Campus</th>
+                        <th class="border border-gray-400 px-4 py-2">From Paralakhemundi Railway Station to C.U.T.M. Campus</th>
+                        <th class="border border-gray-400 px-4 py-2">From the C.U.T.M. Campus to Palasa Railway Station</th>
+                        <th class="border border-gray-400 px-4 py-2">From the C.U.T.M. Campus to Paralakhemundi Railway Station</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-400 px-4 py-2">18-12-2024</td>
+                        <td class="border border-gray-400 px-4 py-2">7.45 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">7.30 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">NA</td>
+                        <td class="border border-gray-400 px-4 py-2">NA</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 px-4 py-2">19-12-2024</td>
+                        <td class="border border-gray-400 px-4 py-2">7.45 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">10.30 A.M. / 12.30 P.M. / 7.30 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">5.30 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">NA</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 px-4 py-2">20-12-2024</td>
+                        <td class="border border-gray-400 px-4 py-2">7.45 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">10.30 A.M. / 12.30 P.M. / 7.30 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">5.30 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">3.30 P.M</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 px-4 py-2">21-12-2024</td>
+                        <td class="border border-gray-400 px-4 py-2">NA</td>
+                        <td class="border border-gray-400 px-4 py-2">NA</td>
+                        <td class="border border-gray-400 px-4 py-2">6.00 P.M</td>
+                        <td class="border border-gray-400 px-4 py-2">3.30 P.M</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="mt-6 text-xl">
+                <p class="text-xl mt-4">
+                    <strong>Following Direct Trains are available from Bhubaneswar/Khurdha/ Visakhapatnam:</strong>
+                </p>
+                <ul class="list-disc pl-6 mt-2">
+                    <li>18117: Rourkela- Gunupur RajyaRani Express</li>
+                    <li>18417: Puri-Gunupur Express</li>
+                    <li>08552: Visakhapatnam-Gunupur Express</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p class="text-xl">
+            <strong>Please click the button below to fill in your details for Transportation <strong>(Mandatory)</strong><br>
+            <div class="mt-6 text-center text-xl">
+                <a href="https://forms.gle/Bk8ezwsaZdLNhun68" target="_blank" class="inline-block px-4 py-2 bg-blue-700 text-white font-bold rounded blink  hover:bg-blue-800 hover:shadow-lg">
+                    👉 Transportation Form
+                </a>
+            </div>
+        </p>
+    </div>
+</div>
+
+    <hr>
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+</body>
+
+</html>
+

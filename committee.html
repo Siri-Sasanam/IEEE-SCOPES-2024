@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/LOGO_Updated.png" type="image/x-icon">
+    <title>IEEE Committee</title>
+    <!-- <link rel="stylesheet" href="regstyles.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="commstyle.css">
+</head>
+
+<body>
+
+    <nav class="z-50 bg-white shadow-lg fixed top-0 w-full">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="nav-links hidden md:flex justify-center items-center">
+                <ul class="flex space-x-4">
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="index.html">Home</a></li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="committee.html">Committee</a></li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                          Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <div class="dropdown">
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                                Author Guidelines
+                                <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                                <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="registration.html">Registration</a>
+                    </li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="contacts.html">Contact</a></li>
+                    
+                    <li>
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold accommodation-link" href="Accomadation.html" 
+                           style="animation: blink 1s infinite; color: inherit; text-decoration: none;">
+                           Accommodation & Transportation
+                          <sup style="color: red; font-size: 0.8em; font-weight: bold; vertical-align: super;">(New)</sup>
+                        </a>
+                      </li>
+                      
+                      <style>
+                      /* Blink animation */
+                      @keyframes blink {
+                        50% {
+                          opacity: 0;
+                        }
+                      }
+                      </style>
+                      
+                      
+
+                </ul>
+            </div>
+            <div class="mobile-toggler md:hidden">
+                <div class="space-y-2" id="menu-toggle">
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 w-full h-full hidden transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="bg-white w-2/4 h-full p-6">
+                <div class="flex justify-end">
+                    <div id="menu-close" class="cursor-pointer">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                </div>
+                <ul class="space-y-6 flex flex-col mt-2">
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 " href="index.html">Home</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="committee.html">Committee</a></li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center " href="#">
+                          Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center">
+                            Author Guidelines
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+
+                        </div>
+                    </li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 " href="registration.html">Registration</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 " href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <main>
+
+        <div class="ccontainer">
+
+
+
+            <h1 class="text-4xl text-blue-900 font-bold">Committee Members</h1>
+            <br>
+            <div class="header">Chief Patron</div>
+            <ul>
+                <li><b>Prof. (Dr.) Mukti Kanta Mishra</b>, President, CUTM, Odisha & AP</li>
+                <li><b>Prof. D. N. Rao</b>, Vice-President, CUTM, Odisha & AP</li>
+            </ul>
+            <div class="header">Patron</div>
+            <ul>
+                <li><b>Prof. (Dr.) Supriya Pattanayak</b>, Vice-Chancellor, CUTM, Odisha</li>
+                <li><b>Prof. Purna Mohanty</b>, Co-founder and CEO Marquee Semiconductor</li>
+            </ul>
+            <div class="header">Honorary General Chair</div>
+            <ul>
+                <li><b> Prof. (Dr.) G. S. N. Raju </b>, Chancellor, CUTM, AP</li>
+                <li><b>Prof. (Dr.) Ganapati Panda</b>, Former Deputy Director, IIT Bhubaneswar, Odisha</li>
+                <li><b>Prof. (Dr.) Okyay Kaynak</b>, Istanbul, Turkey</li>
+                <!-- <li><b>Prof. (Dr.) Huijen Gao</b>, HIT, China</li> -->
+                <!-- <li><b>Prof. A. K. Tripathy</b>, PCIL, Govt. of India.</li> -->
+
+            </ul>
+            <div class="header">General Chair</div>
+            <ul>
+                <!-- <li><b>Prof. (Dr.) Supriya Pattanayak</b>, Vice-Chancellor, CUTM, Odisha</li> -->
+                <li><b>Prof. (Dr.) Anita Patra</b>, Registrar, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Subhransu Ranjan Samantaray</b>, IIT Bhubaneswar, Odisha</li>
+            </ul>
+            <div class="header">Program Chair</div>
+            <ul>
+                <!-- <li><b>Prof. (Dr.) L M. Patnaik</b>, Former Vice-Chancellor, Defence Institute of Advanced Technology, Govt of India, Pune</li> -->
+                <li><b>Dr. Prafulla Kumar Panda</b>, Dean SoET (PKD), CUTM, Odisha</li>
+                <li><b>Dr. Debendra Kumar Sahoo</b>, Assoc. Professor, Dept. of ECE, CUTM, Odisha</li>
+            </ul>
+            <div class="header">Convener</div>
+            <ul>
+                <li><b>Prof. (Dr.) Ashok Misra</b>, Professor, Dept. of Mathematics, CUTM, Odisha</li>
+            </ul>
+            <div class="header">Co-Convener</div>
+            <ul>
+                <!-- <li><b>Prof. (Dr.) Mihir N.Mohanty</b>, S'O'A Deemed to be University, Odisha</li> -->
+                <li><b>Prof. (Dr.) Sangram Keshari Swain</b>, Dean (Exams & Students' Welfare), CUTM, Odisha</li>
+                <li><b>Prof. Prabhat Kumar Patnaik</b>, HOD, Dept. of ECE (PKD), CUTM, Odisha</li>
+                <li><b>Prof. Satyanarayan Padhy</b>, Academic Co-ordinator, SoET, CUTM, Odisha</li>
+            </ul>
+            <div class="header">IEEE Observer Committee</div>
+            <ul>
+
+                <li><b>Prof. (Dr.) Brojo Kishore Mishra</b>, NIST, Berhampur</li>
+                <li><b>Prof. (Dr.) Ranjeeta Patel</b>, KIIT, Bhubaneswar</li>
+            </ul>
+
+            <div class="header">Steering Committee</div>
+            <ul>
+                <li><b>Prof. (Dr.) Satya Prakash Nanda</b>, Dean (Admin.) MSSSoA, CUTM, Odisha</li>
+
+                <li><b>Prof. (Dr.) M. Devender Reddy</b>, Dean (Acad.),MSSSoA CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Rajkishore Swain</b>, Dean SoVAS, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Satyasis Misra</b>, Dean SDG, CUTM, Odisha</li>
+                <li><b>Dr. Prafulla Kumar Panda</b>, Dean SoET, PKD, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Sujata Chakravarty</b>, Dean SoET, Bhubaneswar, CUTM, Odisha</li>
+                <li><b>Dr. Sambid Swain</b>, Associate Dean SoF, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Prajna Pani</b>,Associate Dean SoM, PKD, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Anil Kumar Jonnalagadda</b>, Associate Dean ABM, CUTM, Odisha</li>
+                <li><b>Dr. Durga Prasad Padhi</b>, Director Administration, PKD, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Ashok Misra</b>, Professor, Dept. of Mathematics, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Ramesh Chandra Mohanty</b>, Professor, Dept. of Mech. Engg.,CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Susanta Kumar Biswal</b>, Professor, Dept. of Chemistry,CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Sagar Maitra</b>, Professor, Dept. of Agronomy, MSSSoA, CUTM, Odisha</li>
+                <li><b>Dr. Debendra Kumar Sahoo</b>, Assoc. Professor, Dept. of ECE, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Harish Chandra Mohanta</b>, HoD, Dept. of ECE, Bhubaneswar,CUTM, Odisha</li>
+                <li><b>Prof. Satyanarayan Padhy</b>, Academic Coordinator, SoET, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Gouri Kumar Sahoo</b>, Coordinator, SoAS, PKD, CUTM, Odisha</li>
+                <li><b>Prof. Prabhat Kumar Patnaik</b>, Asst. Professor, Dept. of ECE, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Organising Committee</div>
+            <ul>
+                <li><b>Dr. Durga Prasad Padhi</b>, Director Administration, PKD, CUTM, Odisha</li>
+
+                <li><b>Dr. Ritesh Kumar</b>, Dean Student Affairs, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Harish Chandra Mohanta</b>, HoD, Dept. of ECE, (BBSR), CUTM, Odisha</li>
+                <li><b>Dr. Sujit Mishra </b>, HOD, Dept. of Mechanical Engg. (PKD), CUTM, Odisha </li>
+                <li><b>Dr. Rajib Majhi </b>, HOD, Dept. of Civil Engg. (PKD), CUTM, Odisha </li>
+
+                <li><b>Dr. Sudhansu Kumar Samal</b>, HoD, Dept. of EEE, (BBSR), CUTM, Odisha</li>
+                <li><b>Prof. Debendra Kumar Maharana</b>, HOD, Dept. of CSE (PKD), CUTM, Odisha </li>
+
+            </ul>
+
+
+            <div class="header">Technical Committe</div>
+            <ul>
+                <!-- <li><b>Prof. (Dr.) Haribabu</b>, Brunel University, London</li> -->
+                <!-- <li><b>Prof. (Dr.) Tancher Mimg</b>, Chang Gung University, Taiwan </li> -->
+                <!-- <li><b>Prof. (Dr.) D.L. Waiker</b>, National University, Singapore</li> -->
+
+                <li><b>Prof. (Dr.) Girish Kumar</b>, Professor, IIT, Bombay</li>
+                <li><b>Prof. (Dr.) Sukumar Mishra</b>, Professor, IIT, Delhi</li>
+                <li><b>Prof. (Dr.) Prasant Kumar Sahu</b>, Professor, IIT, Bhubaneswar</li>
+                <li><b>Prof. (Dr.) Saroj Kumar Meher  </b>, Associate Professor, ISI, Bangalore </li>
+                <li><b>Prof. (Dr.) Nithin V. George</b>, Associate Professor, IIT, Gandhi Nagar</li>
+                <li><b>Prof. (Dr.) Gautam Mohanty</b>, Associate Professor, NIT, Durgapur</li>
+                <li><b>Prof. (Dr.) Ramesh Chandra Mohanty</b>, Professor, SoET, CUTM, Odisha</li>
+                <li><b>Prof. Ashirbad Khuntia </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Prof. Sourav Chakraborty </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Ashish Ranjan Dash</b>, Associate Professor, SoET, CUTM, Odisha.</li>
+                <li><b>Dr. Rajendra Kumar Khadanga </b>, Associate Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Chandra Sekhar Dash </b>, Associate Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Abhishek Das </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Abinash Rath </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b> Dr. Adyasha Rath </b>, Assistant Professor, CV Raman Global University, Odisha</li>
+                <li><b>Dr. Prangya Paramita Pradhan</b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Nimay Chandra Giri</b>, Assistant Professor, SoET, CUTM, Odisha </li>
+                <li><b>Dr. Debendra Muduli</b>, Assistant Professor, CV Raman Global University, Odisha</li>
+
+            </ul>
+
+            <div class="header">Publication Committee</div>
+            <ul>
+
+                <li><b>Prof. (Dr.) Girish Kumar</b>, Professor, IIT, Bombay</li>
+                <li><b>Prof. (Dr.) Sukumar Mishra</b>, Professor, IIT, Delhi</li>
+                <li><b>Prof. (Dr.) Ramesh Chandra Mohanty</b>, Professor, Dept. of Mech. Engg.,CUTM, Odisha</li>
+                <li><b>Dr. Abhishek Das </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Abinash Rath </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Prof. Ashirbad Khuntia </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Prof. Sourav Chakraborty </b>, Assistant Professor, SoET, CUTM, Odisha</li>
+                <li><b>Dr. Prangya Paramita Pradhan</b>, Assistant Professor, SoET, CUTM, Odisha</li>
+
+
+
+
+
+            </ul>
+            <div class="header">International Advisory Committee</div>
+            <ul>
+
+                <li><b>Prof. Patrice WIRA</b>, University Institute of Technology of Mulhouse</li>
+                <li><b>Prof. Ahmed Zobaa</b>, Brunel University London: Uxbridge, Middlesex, GB</li>
+                <li><b>Prof. Huijun Gao</b>, Harbin Institute of Technology, China</li>
+                <li><b>Dr. Celia Shahnaz  </b>, BUET, Bangladesh</li>
+                <li><b>Dr. Shazia Hasan </b>, BITS Pilani, Dubai Campus</li>
+                <li><b>Dr. Milan Biswal  </b>, New Mexico State University, USA</li>
+                <li><b>Prof. Hyun Sung Shin</b>, Samsung Electronics, Hwaseong, Korea</li>
+                <li><b>Prof. Jin Young Park</b>, Kyungpook National University, South Korea</li>
+                <li><b>Prof. Djaffar Ould Abdeslam</b>, Chez University of Haute-Alsace</li>
+                <li><b>Prof. Florian Misoc</b>, Kennesaw State University, Marietta</li>
+                <li><b>Prof. Jan Michalik</b>, University of West Bohemia</li>
+                <li><b>Prof. Matthew Armstrong</b>, Newcastle University, UK</li>
+                <li><b>Prof. Andrews Samraj</b>, Mahendra Engineering College , Malaysia</li>
+                <li><b>Prof. Ahmed Khader Habboush</b>, Jerash University, Jerash, Jordan</li>
+                <li><b>Prof. Gyoo-Soo Chae</b>, Baekseok University, South Korea</li>
+                <li><b>Prof. Akhtar Kalam</b>, Victoria University, Australia</li>
+                <li><b>Prof. Mohammad Alnabhan</b>, Mu'tah University, Jordan</li>
+                <li><b>Prof. Ahmad Abu Alaish</b>, Jerash University, Jordan</li>
+                <li><b>Prof. Majed Aburkaba</b>, Tabuk Univeristy, KSA</li>
+                <li><b>Prof. Osama Alia</b>, Tabuk Univeristy, KSA</li>
+                <li><b>Prof. Awad Awadelkarim</b>, Tabuk Univeristy, KSA</li>
+                <li><b>Prof. Izzat Al-Smadi</b>, Texas A&M University, USA</li>
+                <li><b>Prof. Raveendran Paramesran</b>, Monash University, Malaysia</li>
+
+
+            </ul>
+
+            <div class="header">National Advisory Committee</div>
+            <ul>
+                <li><b>Prof. Radhakanta Padhi</b>, IISC, Bangalore</li>
+                <li><b>Prof. Chandrashekhar Narayan Bhende</b>, IIT, Bhubaneswar</li>
+                <li><b>Prof. Prasanta Kumar Mohanty</b>, Vice-Chancellor, CUTM, AP</li>
+                <li><b>Prof. Ajay Kumar Nayak</b>, Pro-Vice Chancellor, CUTM, Odisha</li>
+                <li><b>Prof. Biswajit Mishra</b>, Pro-Vice Chancellor, CUTM, Odisha</li>
+                <li><b>Prof. Mihir N Mohanty</b>, Siksha O Anusandhan, (Deemed to be University), India</li>
+                <li><b>Dr. Sukant Kishoro Bisoy</b>, C. V. Raman Global University, Odisha, India </li>
+                <li><b>Prof. Khaleequr Rehman Niazi</b> , Malaviya National Institute of Technology, Jaipur</li>
+                <li><b>Prof. Atanu Maity</b>, IIT Kharagpur, India</li>
+                <li><b>Prof. Aurobinda Routrai</b>, IIT Kharagpur, India</li>
+                <li><b>Prof. Kamalkanta Mohapatra</b>, NIT Rourkela, India</li>
+                <li><b>Prof. Sarat Kumar Patra</b>, IIT Vadodara, India </li>
+                <li><b>Prof. Subhransu Ranjan Samantaray</b>, IIT Bhubaneswar, India</li>
+                <li><b>Prof. Debiprasad Dogra</b>, IIT Bhubaneswar, India</li>
+                <li><b>Prof. G. V. Mahesh</b>, Indian Institute of Science, Bangalore, India</li>
+                <li><b>Prof. Bidyadhar Subudhi</b>, IIT Goa, India</li>
+                <li><b>Prof. Badri Narayana Subudhi</b>, IIT Jammu, India</li>
+                <li><b>Prof. RudraSankarDhar</b>, NIT Mizoram, India</li>
+                <li><b>Prof. K. B. Mohanty</b>, NIT Rourkela, India</li>
+                <li><b>Prof. Anup Kumar Panda</b>, NIT Rourkela, India</li>
+                <li><b>Prof. Dayal Rama Krishna Parhi</b>, NIT Rourkela, India</li>
+                <li><b>Prof. Bijayananda Patnaik</b>, NIT Raipur, India</li>
+                <li><b>Prof. R. K. Saket</b>, Indian Institute of Technology (BHU), Varanasi</li>
+                <li><b>Prof. Pradeep Kumar Mallick</b>, KIIT University, India</li>
+                <li><b>Prof. Prasant Kumar Pattnaik</b>, KIIT Deemed University, Bhubaneswar, India</li>
+                <!-- <li><b>Prof. P. K. Sahoo</b>, Birla Institute of Technology & Science, Pilani</li> -->
+                <li><b>Prof. Ullash Kumar Rout</b>, Odisha University Of Technology And Research, India</li>
+
+                <li><b>Prof. Pradipta Kumar Nanda</b>, Siksha O Anusandhan, (Deemed to be University), India</li>
+                <li><b>Prof. Rajesh Kumar Behera</b>, Biju Patnaik University of Technology, Odisha</li>
+                <li><b>Prof. Ajit Kumar Panda</b>, National Institute of Science & Technology, India</li>
+                <!-- <li><b>Prof. Amlan Chakrabarti</b>, India</li> -->
+                <!-- <li><b>Prof. Brojo Kishore Mishra</b>, National Institute of Science & Technology, India</b></li> -->
+                <li><b>Prof. Chhabi Rani Panigrahi</b>, Rama Devi Women's University, Bhubaneswar, India</li>
+                <!-- <li><b>Prof. D Patra</b>, National Institute of Science & Technology, India</li> -->
+                <li><b>Prof. Dipti Prasad Mukherjee</b>, India Statistical Institute, India</li>
+                <!-- <li><b>Prof. Bibudhendu Pati</b>, Rama Devi Women's University, Bhubaneswar, India</li> -->
+                <!-- <li><b>Prof. Hariharan Ranganathan</b>, CMR Engineering College, India</li> -->
+                <li><b>Prof. Jyoti Prasad Patra</b>, Odisha University Of Technology And Research, India</li>
+                <!-- <li><b>Prof. Kartik Chandra Patra</b>, C.V. Raman Global University, India</li> -->
+                <li><b>Prof. Mrutyunjaya Panda</b>, Utkal University, India</li>
+                <!-- <li><b>Prof. Narendra Kumar Kamilla</b>, C.V. Raman Global University, India</li> -->
+                <li><b>Prof. Durga Pasad Mohapatra</b>, NIT Roukela, Odisha, India </li>
+                <li><b>Prof. Tripti Swarnakar</b>, IIIT Raipur </li>
+                <li><b>Prof. Rakesh ChanProfa Balabantaray</b>, IIIT, Odisha, India </li>
+                <li><b>Prof. Sanjay Saxena</b>, IIIT, Odisha, India</li>
+                <li><b>Prof. Renu Sharma </b>, SoA University, Odisha, India </li>
+                <li><b>Prof. Tanmoy Roy Choudhury </b>, NIT Rourkela, Odisha, India </li>
+                <li><b>Prof. Satyabrata Dash </b>, GITAM University, India</li>
+                <li><b>Prof. Manoj Kumar Debnath </b>, SoA University</li>
+                <li><b>Prof. Saneev Kumar Das </b>, CUTM, Odisha, India</li>
+                <li><b>Prof. Sujit Bebortta </b>, Ravenshaw University, Odisha, India</li>
+                <li><b>Prof. Manohar Mishra </b>, SoA University, Odisha, India</li>
+                <li><b>Prof. Chinmoy Panigrahi</b>, KIIT, Odisha, India</li>
+                <li><b>Prof. Harish Kumar Sahoo </b>, VSSUT, Burla, Odisha, India</li>
+                <li><b>Prof. Puspanjali Mohapatra </b>, IIIT, Bhubaneswar, India</li>
+                <li><b>Prof. Umamani Subudhi </b>, IIIT, Bhubaneswar, India</li>
+                <li><b>Prof Bharati Mishra </b>, IIIT, Bhubaneswar, India</li>
+                <li><b>Prof. Debashmita Pradhan </b>, KIIT University, India</li>
+                <li><b>Prof. V. Ravikumar Pandi </b>, Amrita Vishwa Vidyapeetham, Kollam, India</li>
+                <li><b>Prof. Suchismita Chinara</b>, NIT Rourkela, India</li>
+
+
+
+
+
+
+
+            </ul>
+
+
+            <div class="header">Finance Committee</div>
+            <ul>
+                <li><b>Mr. Debasis Panda</b>, Comptroller of Finance, CUTM, Odisha</li>
+                <li><b>Prof. Satyanarayan Padhy</b>, Academic Coordinator, SoET, PKD, CUTM, Odisha</li>
+                <li><b>Prof. Prabhat Ranjan Sahoo</b>, Principal SoVET, CUTM, Odisha</li>
+                <li><b>Mr. Debaraj Grahacharya</b>, Manager Finance, PKD, CUTM, Odisha</li>
+            </ul>
+            <div class="header">Publicity/IT Committee</div>
+            <ul>
+                <li><b>Mr. Sukanta Parida</b>, CUTM, Odisha</li>
+                <li><b>Dr. K. C. Sethi</b>, CUTM, Odisha</li>
+                <li><b>Mr. Nrusinha Das</b>, CUTM, Odisha</li>
+                <li><b>Prof. Sambeet Patra</b>, CUTM, Odisha</li>
+                <li><b>Prof. Tofan Kumar Nahak</b>, CUTM, Odisha</li>
+                <li><b>Mr. Prabhat Kumar Nahak</b>, CUTM, Odisha</li>
+                <li><b>Mr. Anil Patro</b>, CUTM, Odisha</li>
+
+            </ul>
+            <div class="header">Track (Session and Event) Committee</div>
+            <ul>
+                <li><b>Prof. Sandipan Pine</b>, Assoc. Prof. Dept. of ECE, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Tanmaya Sankar</b>, Assoc. Prof. Dept. of Agronomy, CUTM, Odisha</li>
+                <li><b>Prof. Rajesh Kumar Misra</b>, Asst. Prof. Dept. of ECE, PKD, CUTM, Odisha</li>
+
+            </ul>
+            <div class="header">Registration Committee</div>
+            <ul>
+                <li><b>Dr. Prangya Paramita Pradhan</b>, Asst. Prof. Dept. of ECE, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Rajib Majhi</b>, Asst. Prof. Dept. of Civil Engg, PKD, CUTM, Odisha</li>
+                <li><b>Prof. N. Jeevaratnam</b>, Asst. Prof. Dept. of ECE, PKD, CUTM, Odisha</li>
+                <li><b>Prof. Subhrashree Pritichhanda</b>, Asst. Prof. Dept. of EEE, PKD, CUTM, Odisha</li>
+
+            </ul>
+            <div class="header">Souvenir Committee</div>
+            <ul>
+                <li><b>Prof. (Dr.) Prajna Pani</b>, Associate Dean SoM, PKD, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Sagar Maitra</b>, HOD, Dept. of Agronomy, CUTM, Odisha</li>
+
+                <!-- <li><b>Dr. Atanu Dev</b>, Assoc. Prof. Agri Extension, CUTM, Odisha</li>    -->
+            </ul>
+
+            <div class="header">Conference Kit/Certificates/Memento/Sewall Committee</div>
+            <ul>
+                <li><b>Prof. Gouri Kumar Sahu</b>, Assoc. Prof., SoAS, PKD, CUTM, Odisha</li>
+                <li><b>Prof. Balaji Padhi</b>, Asst. Prof., SoAS, PKD, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Venue and Stage Monitoring Committee</div>
+            <ul>
+                <li><b>Dr. Girish Rath</b>, SoM, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Prangya Paramita Pradhan</b>, SoET, PKD, CUTM, Odisha</li>
+                <li><b>Prof. Dwiti Sundar Rout</b>, MSSSoA, CUTM, Odisha</li>
+                <li><b>Dr. Ashirbachan Mahapatra</b>,MSSSoA, CUTM, Odisha</li>
+                <li><b>Prof. Upasana Sahoo</b>, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Accommodation and Hospitality Committee</div>
+            <ul>
+                <li><b>Dr. Sambid Swain</b>, Assoc. Dean SoF, CUTM, Odisha</li>
+                <li><b>Prof. Jagannath Padhy</b>, CUTM, Odisha</li>
+                <li><b>Mr. Jagannath Panda</b>, Hostel Chief Warden, CUTM, Odisha</li>
+                <li><b>Mr. Prasanta Panda</b>, CUTM, Odisha</li>
+
+            </ul>
+
+            <div class="header">Transport Committee</div>
+            <ul>
+                <li><b>Dr. Kalyan Chakravarty</b>,SoM, CUTM, Odisha</li>
+                <li><b>Mr. Lingaraj Mohapatra</b>,Transport Incharge, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Cultural Committee</div>
+            <ul>
+                <li><b>Dr. Ritesh Kumar</b>, Dean Student Affairs, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Susanta Kumar Patnaik</b>, Asst. Professor, SoM, PKD, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Snacks and Beverage Committee</div>
+            <ul>
+                <li><b>Dr. Sambid Swain</b>, Assoc. Dean SoF, CUTM, Odisha</li>
+                <li><b>Mr. Santosh Pradhan</b>, CUTM, Odisha</li>
+                <li><b>Mr. Rajendra Panda</b>, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Ambience and Beautification Committee</div>
+            <ul>
+                <li><b>Dr. Susanta Kumar Patnaik</b>, Asst. Professor, SoM, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Narayan Gouda</b>, CUTM, Odisha</li>
+
+
+            </ul>
+
+            <div class="header">Volunteers Committee</div>
+            <ul>
+                <li><b>Dr. Ritesh Kumar</b>, Dean Student Affairs, PKD, CUTM, Odisha</li>
+                <li><b>Dr. Susanta Kumar Patnaik</b>, Asst. Professor, SoM, PKD, CUTM, Odisha</li>
+            </ul>
+
+            <div class="header">Medical and Health Committee</div>
+            <ul>
+                <li><b>Mr. Dilip Swain</b>, CUTM, Odisha</li>
+            </ul>
+
+
+            <div class="header">Sponsorship Committee</div>
+            <ul>
+                <li><b>Prof. (Dr.) Ajay Kumar Nayak</b>, CUTM, Odisha </li>
+                <li><b>Prof. Prakash KVD </b>, Dean HRD, CUTM, Odisha </li>
+                <li><b>Dr. Durga Prasad Padhi</b>, Director Administration, PKD, CUTM, Odisha</li>
+                <li><b>Prof. (Dr.) Satya Prakash Nanda</b>, Dean(Admin.),MSSSoA, CUTM, Odisha</li>
+                <li><b>Prof. Babu Sankar</b>, MD , GT TECH</li>
+
+
+
+
+
+            </ul>
+        </div>
+
+    </main>
+    <section>
+        <div id="footer-placeholder"></div>
+
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="conn.js"></script>
+
+    <script>
+        // Load header and footer
+        $(document).ready(function() {
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+
+</body>
+
+</html>

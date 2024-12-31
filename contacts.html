@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/LOGO_Updated.png" type="image/x-icon">
+    <title>IEEE Contact Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="contactstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    
+
+</head>
+
+<body>
+    <section>
+        <nav class="z-50 bg-white shadow-lg fixed top-0 w-full">
+            <div class="container mx-auto flex justify-between items-center p-4">
+                <div class="nav-links hidden md:flex justify-center items-center">
+                    <ul class="flex space-x-4">
+                        <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="index.html">Home</a></li>
+                        <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="committee.html">Committee</a></li>
+                        <li class="relative group">
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                              Sponsor
+                                <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <div class="dropdown">
+                                <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                                    Author Guidelines
+                                    <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                                    <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="registration.html">Registration</a>
+                        </li>
+                        <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="contacts.html">Contact</a></li>
+                        <li>
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold accommodation-link" href="Accomadation.html" 
+                               style="animation: blink 1s infinite; color: inherit; text-decoration: none;">
+                               Accommodation & Transportation
+                              <sup style="color: red; font-size: 0.8em; font-weight: bold; vertical-align: super;">(New)</sup>
+                            </a>
+                          </li>
+                          
+                          <style>
+                          /* Blink animation */
+                          @keyframes blink {
+                            50% {
+                              opacity: 0;
+                            }
+                          }
+                          </style>
+                          
+                    </ul>
+                </div>
+                <div class="mobile-toggler md:hidden">
+                    <div class="space-y-2" id="menu-toggle">
+                        <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                        <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                        <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 w-full h-full hidden transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+                <div class="bg-white w-2/4 h-full p-6">
+                    <div class="flex justify-end">
+                        <div id="menu-close" class="cursor-pointer">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-6 flex flex-col mt-2">
+                        <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 " href="index.html">Home</a></li>
+                        <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 " href="committee.html">Committee</a></li>
+                        <li class="relative group">
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center " href="#">
+                              Sponsor
+                                <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center">
+                                Author Guidelines
+                                <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                                <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+
+                            </div>
+                        </li>
+                        <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="registration.html">Registration</a></li>
+                        <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="contacts.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+<br>
+    <section class="header mt-5">
+        <div class="text-box">
+            <h1>Centurion University of Technology and Management</h1>
+            <p class="text-2xl font-bold ">Lifelong learning is an extension of classrooms, <br> books and theories. The DNA of Centurion is to offer
+                <br>ramps and ladders for multiple entry and exit by
+                <br>adopting and adapting National Credit Framework.</p>
+            <a href="https://cutm.ac.in/" target="_blank" class="hero-btn ">Knowing Culture of Education</a>
+        </div>
+    </section>
+
+    <div class="ffbox">
+        <div class="ffbox1">
+            <section style="padding: 0%;" class="course">
+                <h1 class="text-black-900">Contact Information</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>SCOPES Office</h3>
+                        <h6>Room No: F-221, 2nd Floor, CRC-2,<br> Dept of ECE, School of Engineering & Technology, CUTM At: R-Sitapur, Allurinagar, Paralakhemundi<br> Dist: Gajapati, Odisha, India<br> Mob: <a href="tel:+917008242454" class="text-blue-600 underline">+91 7008242454</a></h6>
+                        Email us at <a href="mailto:scopes2024@cutm.ac.in" class="text-blue-600 underline">scopes2024@cutm.ac.in</a>
+                    </div>
+                    <div class="contact-item1">
+                        <h3>Organizing Chair</h3>
+                        <h2>Dr. Debendra Kumar Sahoo</h2>
+                        <p class="font-bold text-white" style="color: white; font-weight: bold;">
+                            Contact: <a href="tel:+917008242454" class="text-white font-bold">+91 7008242454</a><br>
+                            Mail: <a href="mailto:debendra.sahoo@cutm.ac.in" class="underline text-xs">debendra.sahoo@cutm.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="contact-item2">
+                        <h3>Convener</h3>
+                        <h2>Dr. Ashok Misra</h2>
+                        <p class="font-bold text-white" style="color: white; font-weight: bold;">
+                            Contact: <a href="tel:+919937563329" class="text-white font-bold">+91 9937563329</a><br>
+                            Mail: <a href="mailto:ashok.misra@cutm.ac.in" class="underline text-xs">ashok.misra@cutm.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="contact-item3">
+                        <h3>Co-Convener</h3>
+                        <h2>Prof. Prabhat Kumar Patnaik</h2>
+                        <p class="font-bold text-white" style="color: white; font-weight: bold;">
+                            Contact: <a href="tel:+917008701920" class="text-white font-bold">+91 7008701920</a><br>
+                            Mail: <a href="mailto:prabhat.patnaik@cutm.ac.in" class="underline text-xs">prabhat.patnaik@cutm.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="contact-item4">
+                        <h3>Co-Convener</h2>
+                        <h2>Prof. Satyanarayan Padhy</h2>
+                        <p class="font-bold text-white" style="color: white; font-weight: bold;">
+                            Contact: <a href="tel:+918917440019" class="text-white font-bold">+91 8917440019</a><br>
+                            Mail: <a href="mailto:snpadhy@cutm.ac.in" class="underline text-xs">snpadhy@cutm.ac.in</a>
+                        </p>
+                    </div>
+
+
+                    <div class="contact-item5">
+                        <h3>Co-Convener</h2>
+                        <h2>Prof. (Dr.) Sangram Keshari Swain</h2>
+                        <p class="font-bold text-white" style="color: white; font-weight: bold;">
+                            Contact: <a href="tel:+91993709394" class="text-white font-bold">+91 9937093949</a><br>
+                            Mail: <a href="mailto:sangram@cutm.ac.in" class="underline text-xs">sangram@cutm.ac.in</a>
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <div class="map-div md:w-1/2">
+            <div class="gmap_canvas">
+                <iframe width="50%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Centurion%20University%20of%20Technology%20and%20Management,%20Odisha&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section>
+        <div id="footer-placeholder"></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js "></script>
+    <script src="https://cdn.tailwindcss.com "></script>
+    <script>
+        $(document).ready(function() {
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+
+    <script>
+        var navLinks = document.getElementById("navLinks ");
+
+        function showMenu() {
+            navLinks.style.right = "0 ";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px ";
+        }
+    </script>
+</body>
+
+</html>

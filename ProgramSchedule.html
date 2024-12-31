@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/LOGO_Updated.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title >Program Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .schedule {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .schedule h2 {
+            color:  #071478;
+            text-align: center;
+        }
+        .day {
+            margin-bottom: 20px;
+        }
+        .day h3 {
+            background-color:  #071478;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin: 0;
+            border-radius: 5px 5px 0 0;
+        }
+        .day table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        .day table, .day th, .day td {
+            border: 1px solid  #0e1a78;
+        }
+        .day th, .day td {
+            padding: 10px;
+            text-align: center;
+        }
+        .day th {
+            background-color: #7099c8;
+            color: #fff;
+        }
+        .pdf-viewer {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .pdf-viewer h2 {
+            color:  #071478;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .pdf-download {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .pdf-download a {
+            background-color: #1e6681;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .schedule, .pdf-viewer {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+
+
+
+
+
+
+        .mobile-toggler .fa-bars,
+.mobile-toggler .fa-x {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile-toggler .fa-bars {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-menu {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 1000;
+    }
+
+    .mobile-menu.hidden {
+        transform: translateX(100%);
+    }
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown .dropbtn .caret {
+    margin-left: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+.program-title {
+    color: #002244; /* Dark Blue */
+    text-align: center;
+}
+
+.faq-main-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002244;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* FAQ Container */
+.faq-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+
+
+}
+
+/* FAQ Header */
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002244; /* Dark Blue */
+    color: #ffffff; /* White Text */
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.faq-header h3 {
+    margin: 0;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* FAQ Content */
+.faq-content {
+    background-color: #f4f4f4;
+    color: #002244; /* Dark Blue */
+    padding: 1rem;
+    display: none; /* Hidden by default */
+    border-left: 5px solid #002244;
+    border-radius: 5px;
+}
+
+.faq-content ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.faq-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* FAQ Toggle Interaction */
+.faq.open .faq-content {
+    display: block;
+}
+
+
+
+
+
+/* Added Now */
+body {
+            font-family: Arial, sans-serif;
+        }
+        h2, h3 {
+            margin-bottom: 0;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .keynote {
+            color: green;
+            font-weight: bold;
+        }
+        .speaker {
+            color: red;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: gold;
+            font-weight: bold;
+        }
+        .session {
+            color: blue;
+            font-weight: bold;
+        }
+        .venue {
+            font-weight: bold;
+        }
+
+
+
+        header {
+    background: #071478;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <nav class="z-50 bg-white shadow-lg fixed top-0 w-full">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="nav-links hidden md:flex justify-center items-center">
+                <ul class="flex space-x-4">
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="index.html">Home</a></li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="committee.html">Committee</a></li>
+                    <li class="dropdown">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                         Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold" href="#">
+                            Author Guidelines
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="ProgramSchedule.html">Program Shedule</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                            <a class="text-xl block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+                          
+                        </div>
+                    </li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="registration.html">Registration</a></li>
+                    <li><a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold" href="contacts.html">Contact</a></li>
+                    <li>
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 font-bold accommodation-link" href="Accomadation.html" 
+                           style="animation: blink 1s infinite; color: inherit; text-decoration: none;">
+                           Accommodation & Transportation
+                          <sup style="color: red; font-size: 0.8em; font-weight: bold; vertical-align: super;">(New)</sup>
+                        </a>
+                      </li>
+                      
+                      <style>
+                      /* Blink animation */
+                      @keyframes blink {
+                        50% {
+                          opacity: 0;
+                        }
+                      }
+                      </style>
+                      
+                </ul>
+            </div>
+            <div class="mobile-toggler md:hidden">
+                <div class="space-y-2" id="menu-toggle">
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                    <div class="w-8 h-1 bg-gray-700 transition transform duration-300"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 w-full h-full hidden transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="bg-white w-2/4 h-full p-6">
+                <div class="flex justify-end">
+                    <div id="menu-close" class="cursor-pointer">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                </div>
+                <ul class="space-y-6 flex flex-col mt-2">
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="index.html">Home</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="committee.html">Committee</a></li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center " href="#">
+                          Sponsor
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300 dropdown-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="sponsors.html">Sponsors</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 " href="callforsponsors.html">Call for Sponsorship</a>
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <a class="text-2xl text-gray-700 hover:text-gray-900 transition duration-300 flex items-center font-bold">
+                            Author Guidelines
+                            <svg class="w-6 h-6 ml-1 text-gray-500 group-hover:text-gray-700 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content hidden group-hover:block absolute bg-white shadow-lg mt-1">
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="CallforPapers.html">Call For Papers</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Important Dates.html">Important Dates</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="PaperSubmission.html">Paper-Submission</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100 font-bold" href="ProgramSchedule.html">Program Shedule</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="siteseeing.html">Places to Visit</a>
+                            <a class="text-lg block px-4 py-2 text-gray-700 hover:bg-gray-100" href="Accomadation.html">Accommodation & Transportation</a>
+                          
+                        </div>
+                    </li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="registration.html">Registration</a></li>
+                    <li><a class="text-xl text-gray-700 hover:text-gray-900 transition duration-300" href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ <br><br>
+ 
+          
+
+    <div class="container">
+        <div class="schedule">
+            <header class="mt-5">
+               
+                <h1 class="text-3xl text-center font-bold">Program Shedule</h1>
+            </header>
+            
+            <!-- <h6 class="text-2xl font-bold text-red-800 text-center">The data will be updated shortly...</h6> -->
+        
+            <div class="faq-container">
+                <h1 class="faq-main-header">Day-wise Programs</h1>
+        
+                <div class="faq">
+                    <div class="faq-header" style="text-align: center;">
+                        <h3 class="text-3xl" style="display: inline-block; margin: 0 auto;">Day 1</h3>
+                        <span class="toggle-btn">+</span>
+                    </div>
+                    
+                    <div class="faq-content">
+                        <h2 class="text-2xl font-bold">Day-1</h2>
+                        <h3 class="font-bold">Date: 19-12-2024</h3>
+                        <table>
+                            <tr>
+                                <th>Time</th>
+                                <th>Program</th>
+                                <th>Venue</th>
+                            </tr>
+                            <tr>
+                                <td>8:30 am – 10:30 am</td>
+                                <td><strong>Registration</strong></td>
+                                <td class="venue">New Admin Block</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 am – 11:30 am</td>
+                                <td><strong>Inaugural Session</strong></td>
+                                <td class="venue">Auditorium</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>11:30 am – 11:40 am</td>
+                                <td>Tea Break</td>
+                                <td class="venue">Auditorium</td>
+                            </tr>
+                            <tr>
+                                <td>11:40 am – 12:40 pm</td>
+                                <td><span class="keynote">Key Note-1</span> (OFFLINE)<br><span class="speaker">Dr. P. S. R. Srinivasa Sastry</span><br> Founder & Former Director, DSP, DRDO, Hyderabad <br><em> <strong>Topic:</strong> Technological Advances and their impact on Modern Society</em></td>
+                                <td class="venue">Auditorium</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>12:40 pm – 1:40 pm</td>
+                                <td><span class="keynote">Key Note-2</span> (OFFLINE)<br><span class="speaker">Prof. (Dr.) Naeem Hannoon</span><br> University of Teknologi MARA, Sheh Aalm, Malaysia <br><em> <strong>Topic:</strong> Advanced Automation of Substations-latest trends</em></td>
+                                <td class="venue">Auditorium</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>1:40 pm – 2:30 pm</td>
+                                <td>Working Lunch</td>
+                                <td></td>
+                            </tr>
+
+
+                            <tr>
+                                <td rowspan="2">2:30 pm – 3:30 pm</td> 
+                                <td>
+                                    <span class="keynote">Key Note-3</span> (ONLINE)<br>
+                                    <span class="speaker">Dr. Raffaele Scuderi</span><br>
+                                    Industry Process Consultant Specialist at Dassault Systems<br>
+                                    <em><strong>Topic:</strong> 5G Coverage and Channel Simulation in a Complex Industrial Environment</em><br><br>
+                                </td>
+                                <td class="venue">Auditorium</td> 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="keynote">Plenary Session</span> (OFFLINE)<br>
+                                    <span class="speaker">Prof. Subhransu Ranjan Samantaray</span><br>
+                                    Professor, IIT, Bhubaneswar & Vice-President/Chairman, IEEE Bhubaneswar Subsection<br>
+                                </td>
+                                <td class="venue">Seminar Hall-1</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>3:30 pm – 4:00 pm</td>
+                                <td>High Tea</td>
+                                <td></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>4:00 pm – 6:00 pm</td>
+                                <td><span class="session">Technical Session-1</span></td>
+                                <td>Parallel Paper Presentations in 10 different Venues</td>
+                            </tr>
+                            
+                           
+                            <tr>
+                                <td>7:00 pm – 8:00 pm</td>
+                                <td><span class="venue">Cultural Program</span></td>
+                                <td class="venue">Auditorium</td> 
+                            </tr>
+                            <tr>
+                                <td>8:00 pm – 9:00 pm</td>
+                                <td><span class="venue">Dinner</span></td>
+                                <td></td> 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+        
+                <div class="faq">
+                    <div class="faq-header" style="text-align: center;">
+                        <h3 class="text-3xl" style="display: inline-block; margin: 0 auto;">Day 2</h3>
+                        <span class="toggle-btn">+</span>
+                    </div>
+                    <div class="faq-content">
+                        <h2 class="text-2xl font-bold">Day-2</h2>
+    <h3 class="font-bold">Date: 20-12-2024</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Program</th>
+            <th>Venue</th>
+        </tr>
+        <tr>
+            <td>8:30 am – 9:30 am</td>
+            <td><strong>Registration</strong></td>
+            <td class="venue">New Admin Block</td>
+        </tr>
+        <tr>
+            <td>9:30 am – 10:15 am</td>
+            <td><span class="keynote">Key Note-4</span> (OFFLINE)<br><span class="speaker">Ms. Renuka Srinivasan</span>
+                <br>
+                Director SIMULIA India - Dassault Systems
+                <br>
+                <em><strong>Topic:</strong> Design of Simulation Driven antenna systems for enhanced performance and efficiency.</em><br></td>
+                <td class="venue">Auditorium</td> 
+        </tr>
+        <tr>
+            <td>10:15 am – 11:15 am</td>
+            <td><span class="keynote">Key Note-5</span> (OFFLINE)<br><span class="speaker">Prof. (Dr.) Ganapati Panda</span><br>
+                
+                Former Deputy Director, IIT, Bhubaneswar
+                <br>
+                <em><strong>Topic:</strong> Recent Advances in Signal Processing and Communication</em><br></td>
+                <td class="venue">Auditorium</td>  
+        </tr>
+        <tr class="highlight">
+            <td>11:15 am – 11:30 am</td>
+            <td>Tea Break</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11:30 am – 1:30 pm</td>
+            <td><span class="session">Technical Session-2</span></td>
+            <td>Parallel Paper Presentations in 10 different Venues</td>
+        </tr>
+        <tr class="highlight">
+            <td>1:30 pm – 2:30 pm</td>
+            <td>Working Lunch</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2:30 pm – 3:30 pm</td>
+            <td><span class="keynote">Key Note-6</span> (ONLINE)<br><span class="speaker">Mr. Sunil Sabat</span><br>
+                Principal Program Manager, Microsoft Corporations
+                <br>
+                <em><strong>Topic:</strong> Design of data driven modern electronics systems in the era of cloud and AI</em><br></td>
+                <td class="venue">Auditorium</td>  
+        </tr>
+        <tr class="highlight">
+            <td>3:30 pm – 3:45 pm</td>
+            <td>High Tea</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3:45 pm – 6:00 pm</td>
+            <td class="venue">Local Site Visit</td>
+            <td >Parallel Paper Presentations in 10 different Venues</td>
+        </tr>
+        <tr>
+            <td>7:00 pm – 8:00 pm</td>
+            <td class="venue">Cultural Program followed by Gala Dinner</td>
+            <td >Tribal Village</td>
+        </tr>
+    </table>
+                    </div>
+                </div>
+        
+                <div class="faq">
+                    <div class="faq-header" style="text-align: center;">
+                        <h3 class="text-3xl" style="display: inline-block; margin: 0 auto;">Day 3</h3>
+                        <span class="toggle-btn">+</span>
+                    </div>
+                    <div class="faq-content">
+                        <h2 class="text-2xl font-bold">Day-3</h2>
+                        <h3 class="font-bold">Date: 21-12-2024</h3>
+                        <table>
+                            <tr>
+                                <th>Time</th>
+                                <th>Program</th>
+                                <th>Venue</th>
+                            </tr>
+                            <tr>
+                                <td>8:30 am – 10:00 am</td>
+                                <td><strong>Registration</strong></td>
+                                <td class="venue">New Admin Block</td>
+                            </tr>
+                            <tr>
+                                <td>10:00 am – 11:00 am</td>
+                                <td><span class="keynote">Key Note-7</span> (OFFLINE)<br><span class="speaker">Dr. Jagannath Nayak</span><br>
+                                    
+                                    Director, DRDO, Hyderabad
+                <br>
+                <em><strong>Topic:</strong> The Future Battlefield: Decoding the Invisible War</em><br></td>
+                <td class="venue">Auditorium</td>  
+                            </tr>
+                            <tr class="highlight">
+                                <td>11:00 am – 11:15 am</td>
+                                <td>Tea Break</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>11:15 am – 12:15 pm</td>
+                                <td><span class="keynote">Key Note-8</span> (ONLINE)<br><span class="speaker">Mr. Purna Chandra Mohanty</span><br>
+                                    CEO Marquee Semiconductor
+                <br>
+                <em><strong>Topic:</strong> The Art of Custom Silicon Design – India’s need of the hour.</em><br></td>
+                <td class="venue">Auditorium</td>  
+                            </tr>
+                            <tr>
+                                <td>12:15 pm – 1:30 pm</td>
+                                <td><span class="session">Technical Session-3</span> (If Required)</td>
+                                <td>Parallel Paper Presentations in 10 different Venues</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>1:30 pm – 2:30 pm</td>
+                                <td>Working Lunch</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2:30 pm – 3:30 pm</td>
+                                <td class="venue">Valedictory Session</td>
+                                <td class="venue">Auditorium</td> 
+                            </tr>
+                            <tr class="highlight">
+                                <td>3:30 pm – 4:00 pm</td>
+                                <td>High Tea</td>
+                                <td class="venue">Auditorium</td> 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="faq">
+                   
+                    <div class="faq-header" style="text-align: center;">
+                        <h3 class="text-3xl" style="display: inline-block; margin: 0 auto;">Parallel Technical Oral Presentation Schedule</h3>
+                        <span class="toggle-btn">+</span>
+                    </div>
+                
+                    <!-- FAQ Content -->
+                    <div class="faq-content">
+                        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 10px;">Select Online or Offline to view the Presentation Schedule:</p>
+                        <div style="text-align: center;">
+                            <!-- Online Button -->
+                            <a href="assets/SCOPES-ONLINE.pdf" target="_blank" class="btn-pdf" style="text-decoration: none; 
+                            padding: 10px 20px; background-color: #007BFF; color: white; border-radius: 5px; margin-right: 10px;">
+                                Online
+                            </a>
+                            <!-- Offline Button -->
+                            <a href="assets/SCOPES-OFFLINE.pdf" target="_blank" class="btn-pdf" style="text-decoration: none; 
+                            padding: 10px 20px; background-color: #28A745; color: white; border-radius: 5px;">
+                                Offline
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+
+            </div>
+        </div>
+</div>        
+  
+        <div id="footer-placeholder"></div>
+
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="conn.js"></script>
+
+    <script>
+        // Load header and footer
+        $(document).ready(function () {
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+
+    </script>
+
+<script>
+    document.querySelectorAll('.faq-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const faq = header.parentElement;
+            faq.classList.toggle('open');
+            const toggleBtn = header.querySelector('.toggle-btn');
+            toggleBtn.textContent = faq.classList.contains('open') ? '-' : '+';
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
